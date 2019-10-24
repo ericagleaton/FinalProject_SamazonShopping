@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ 
+<a href="/">Show All Orders</a><br />
+Order Number :<span th:text="${order.name}" ></span><br />
+# of Items in Order :<span th:text="${order.numItemsInOrder}" ></span><br />  
+Order Subtotal :<p th:text="${order.orderSubtotal}" ></p>  
+Order Shipping :<span th:text="${order.orderShipping}" ></span><br />
+Order Total :<span th:text="${order.orderTotal}" ></span><br />
+<a th:href="@{/delete/{id}(id=${order.id})}">Delete this Order</a>
+
+
+</body>
+</html>

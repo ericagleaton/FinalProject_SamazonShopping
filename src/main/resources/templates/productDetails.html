@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>image</th>
+    </tr>
+    <tr><b>
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.description}"></td>
+        <td th:text="${product.imageURL}"></td>
+        <!--           <td><a th:href="@{/addToCart/{productId}(id=${product.productId})}">Add to Cart</a>&nbsp
+                       <a th:href="@{/addToWishList/{productId}(id=${product.productId})}">Add to wish list</a>
+
+                   </td> -->
+
+    </b>
+    </tr>
+</table>
+</body>
+</html>

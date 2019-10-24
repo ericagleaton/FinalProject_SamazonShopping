@@ -11,6 +11,7 @@ import java.util.Arrays;
 @Service
 public class UserService {
 
+
     @Autowired
     UserRepository userRepository;
 
@@ -56,4 +57,6 @@ public class UserService {
         User user = userRepository.findByUsername(currentusername);
         return user;
     }
+
+
 }

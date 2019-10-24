@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,7 +19,7 @@ public class SSUserDetailsService implements UserDetailsService {
     private UserRepository userRepository;
 
     public SSUserDetailsService(UserRepository userRepository){
-        this.userRepository=userRepository;
+        this.userRepository = userRepository;
     }
 
     @Override

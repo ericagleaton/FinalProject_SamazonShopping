@@ -21,6 +21,7 @@ public class SecurityController {
     @Autowired
     UserRepository userRepository;
 
+
     @RequestMapping("/")
     public String index() {
         return "index";
@@ -28,6 +29,7 @@ public class SecurityController {
 
     @RequestMapping("/login")
     public String login() {
+
         return "login";
     }
 
@@ -39,19 +41,25 @@ public class SecurityController {
     }
 
     @GetMapping("/register")
-    public String showRegistrationPage(Model model){
+    public String showRegistrationPage(Model model) {
         model.addAttribute("user", new User());
         return "registration";
     }
 
     @PostMapping("/register")
-    public String processRegistrationPage(@Valid @ModelAttribute("user") User user, BindingResult result, Model model){
+    public String processRegistrationPage(@Valid @ModelAttribute("user") User user, BindingResult result, Model model) {
         model.addAttribute("user", user);
-        if (result.hasErrors()){
+        if (result.hasErrors()) {
             return "registration";
         }
-        else{
+        // ***** authentication for administrator and user *********
+        else {
             userService.saveUser(user);
+            if ((user.getPosition()).equalsIgnoreCase("administrator")) {
+                userService.saveAdmin(user);
+            } else {
+                userService.saveUser(user);
+            }
             model.addAttribute("message", "User Account Created");
         }
         return "index";
