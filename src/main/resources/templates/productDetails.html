@@ -1,29 +1,73 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="https:www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <title>Product Detail</title>
 </head>
-<body>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Description</th>
-        <th>image</th>
-    </tr>
-    <tr><b>
-        <td th:text="${product.name}"></td>
-        <td th:text="${product.price}"></td>
-        <td th:text="${product.description}"></td>
-        <td th:text="${product.imageURL}"></td>
-        <!--           <td><a th:href="@{/addToCart/{productId}(id=${product.productId})}">Add to Cart</a>&nbsp
-                       <a th:href="@{/addToWishList/{productId}(id=${product.productId})}">Add to wish list</a>
 
-                   </td> -->
 
-    </b>
+<!--Navbar-->
+<div th:insert="base :: navbar"></div>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="alert alert text-center" style="background-color: lightsalmon" role="alert">
+                <h2>Product Details</h2>
+            </div>
+
+<!--                        <a href="/">Show All Products</a><br>-->
+            <a href="/list" type="button" class="btn btn-outline-success">All products</a><br><br>
+            <body>
+           <!-- <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>image</th>
+                </tr>
+                <tr><b>
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.price}"></td>
+                    <td th:text="${product.description}"></td>
+                    <td img th:src="${product.imageURL}" width="50px" hight="50px" alt="product-image"></td>
+                             <td><a th:href="@{/addToCart/{productId}(id=${product.productId})}">Add to Cart</a>&nbsp
+                                   <a th:href="@{/addToWishList/{productId}(id=${product.productId})}">Add to wish list</a>
+                             </td>
+
+
+        </b>
     </tr>
 </table>
+-->
+
+            Name: <span th:text="${product.name}"></span><br>
+            Description: <span th:text="${product.description}"></span><br>
+            Price: <span th:text="${product.price}"></span><br>
+            Image URL: <span img th:src="${product.imageURL}" width="50px" hight="50px" alt="product-image"></span><br>
+
 </body>
+        </div>
+    </div>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<!--Footer-->
+<div th:insert="base :: footer"></div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </html>

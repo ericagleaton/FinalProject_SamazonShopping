@@ -45,6 +45,9 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Collection<Order> wishLists;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Collection<Product> products;
+
     public User() {
     }
 
@@ -138,5 +141,21 @@ public class User {
 
     public void setOrders(Collection<Order> orders) {
         this.orders = orders;
+    }
+
+    public Collection<Order> getWishLists() {
+        return wishLists;
+    }
+
+    public void setWishLists(Collection<Order> wishLists) {
+        this.wishLists = wishLists;
+    }
+
+    public Collection<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Collection<Product> products) {
+        this.products = products;
     }
 }

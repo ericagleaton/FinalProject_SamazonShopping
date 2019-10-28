@@ -65,7 +65,7 @@
                 </li>
 
                 <li sec:authorize="isAuthenticated()" class="nav-item text-light">
-                    <a class="nav-link text-white" href="/">Product Details</a>
+                    <a class="nav-link text-white" href="/shoppingCart">Wish List</a>
                 </li>
                 <li sec:authorize="isAuthenticated()" class="nav-item text-light">
                     <a class="nav-link text-white" href="/list">Product List</a>
@@ -74,9 +74,9 @@
                     <a class="nav-link text-white" href="/userlist">User List</a>
                 </li>
 
-                <li sec:authorize="isAuthenticated()" class="nav-item text-light">
-                    <a class="nav-link text-white" href="/">Check out</a>
-                </li>
+                <!--<li sec:authorize="isAuthenticated()" class="nav-item text-light">
+                    <a class="nav-link text-white" href="/checkout">Check out</a>
+                </li>-->
                 <li class="nav-item">
                     <a sec:authorize="isAuthenticated()" class="nav-link text-white" href="/logout">Logout</a>
                 </li>

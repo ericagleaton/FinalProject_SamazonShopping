@@ -1,4 +1,3 @@
-Name	Description	Price	URL	Active	NameNoSpaces
 Adrenal Strength	Promotes healthy stress response and wards off fatigue	28.67	https://www.megafood.com/dw/image/v2/BBZT_PRD/on/demandware.static/-/Sites-megafood-master/default/dw37777f2d/MOOD/W1001/W1001.png?sw=373	TRUE	AdrenalStrength
 Adult B-Centered	Supports healthy cognitive function	28.67	https://www.megafood.com/dw/image/v2/BBZT_PRD/on/demandware.static/-/Sites-megafood-master/default/dwc47517d6/VITAMIN_B/W1002/10334/10334.png?sw=1000	TRUE	AdultB-Centered
 Alpha-Teen	Supports the optimal health and wellbeing of teens aged 13 to 18	49.56	https://www.megafood.com/dw/image/v2/BBZT_PRD/on/demandware.static/-/Sites-megafood-master/default/dw367ae1ff/KIDS/W1003/W1003.png?sw=373	TRUE	Alpha-Teen

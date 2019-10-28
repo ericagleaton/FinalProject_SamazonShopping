@@ -6,7 +6,7 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
-    <title>Product List</title>
+    <title>Cart List</title>
 </head>
 <body>
 
@@ -17,14 +17,18 @@
 
 <br>
 
+<!--
 
 <div class="container">
     <div class="row">
         <div class="col">
 
             <div class="alert alert text-center" style="background-color: lightsalmon" role="alert">
-                <h2>All Products</h2>
+                <h2>Shopping cart</h2>
             </div>
+
+
+            <h1 th:text="${productnames}"></h1>
 
             <table class="table">
                 <thead class="thead-dark">
@@ -38,13 +42,15 @@
                 </tr>
                 </thead>
                 <tbody>
+&lt;!&ndash;                <span th:if="${myuser.product.productId == product.productId}">&ndash;&gt;
                 <tr th:each="product : ${products}">
+&lt;!&ndash;                    <td th:text="${product.firstName}"></td>&ndash;&gt;
+&lt;!&ndash;<tr>&ndash;&gt;
                     <td th:text="${product.name}"></td>
                     <td th:text="${product.description}"></td>
                     <td th:text="${product.price}"></td>
-<!--                    <td th:text="${product.imageURL}"></td>-->
-<!--                    <td img src="${product.imageURL}" alt=" " class="card-img-top" ></td>-->
-                    <td><img th:src="${product.imageURL}" width="50px" hight="50px" alt="product-image"></td>
+                    &lt;!&ndash;                    <td th:text="${product.imageURL}"></td>&ndash;&gt;
+                    <td img src="${product.imageURL}" alt=" " class="card-img-top" ></td>
                     <td th:text="${product.active}"></td>
                     <td>
 
@@ -54,15 +60,52 @@
                         </div>
 
                         <a th:href="@{/detail/{id}(id=${product.productId})}" type="button" class="btn btn-outline-success">Details</a>
-                        <a th:href="@{/addtoCart/{id}(id=${product.productId})}" type="button" class="btn btn-outline-success">Add to Cart</a> -
+&lt;!&ndash;                        <a th:href="@{/addtoCart/{id}(id=${product.productId})}" type="button" class="btn btn-outline-success">Add to Cart</a> - &ndash;&gt;
                     </td>
                 </tr>
+&lt;!&ndash;                </span>&ndash;&gt;
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+-->
 
+
+
+<div class="container">
+
+    <h1 class="jumbotron">
+        <span sec:authentication="name"></span>'s Shopping Cart
+    </h1>
+
+    <div class="alert alert-info" th:if="${outOfStockMessage}" th:utext="${outOfStockMessage}"></div>
+
+    <div class="panel-default well" th:each="product : ${products.entrySet()}">
+        <div class="panel-heading">
+            <h1><a th:text="${product.getKey().name}" th:href="@{'/product/' + ${product.getKey().productId}}">Title</a></h1>
+            <h3 th:text="${product.getKey().description}">Description</h3>
+        </div>
+        <div class="row panel-body">
+            <div th:inline="text" class="col-md-2">Price: $ [[${product.getKey().price}]] </div>
+            <div th:inline="text" class="col-md-9">Quantity: [[${product.getValue()}]]</div>
+            <a th:href="@{/removeProduct/{id}(id=${product.getKey().productId})}" class="col-md-1">
+                <button type="button" class="btn btn-primary" th:text="Remove">Remove</button>
+            </a>
+        </div>
+        <br></br>
+    </div>
+
+    <div class="row panel-body">
+        <h4 class="col-md-11" th:inline="text">Total: $ [[${total}]]</h4>
+        <h4 class="col-md-11" th:inline="text">Shipping cost: $ [[${shippingCost}]]</h4>
+        <h2 class="col-md-11" th:inline="text">Grand Total: $ [[${grandTotal}]]</h2>
+        <a th:href="@{/checkout}" class="col-md-1">
+            <button type="button" class="btn btn-danger" th:text="Checkout">Checkout</button>
+        </a>
+    </div>
+
+</div>
 
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

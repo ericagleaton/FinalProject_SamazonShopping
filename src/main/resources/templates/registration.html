@@ -100,7 +100,9 @@
                     </div>
                 </div>
                 <div class="form-group ">
-                    <label for="email">Position</label><mark><strong>
+                    <label for="position">Position</label><mark><strong>
+<!--                    Added-->
+
                     <span th:if ="${#fields.hasErrors('position')}"
                           th:errors="*{position}">Position Error</span></strong></mark>
                     <input type ="text" class="form-control" id="position" placeholder="Position" th:field="*{position}" /> <br />

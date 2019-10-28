@@ -54,7 +54,11 @@ public class SecurityController {
         }
         // ***** authentication for administrator and user *********
         else {
-            userService.saveUser(user);
+
+//            userService.saveUser(user);
+
+//            userService.saveUser(user);
+
             if ((user.getPosition()).equalsIgnoreCase("administrator")) {
                 userService.saveAdmin(user);
             } else {

@@ -20,6 +20,16 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+        <!-- Data REST -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5 -->
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
@@ -96,8 +106,6 @@
             <artifactId>cloudinary-http44</artifactId>
             <version>1.2.1</version>
         </dependency>
-
-
 
     </dependencies>
 
